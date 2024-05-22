@@ -1,0 +1,6 @@
+{...}:
+{
+  imports = [
+    ./hyperland/hyperland.nix
+  ]
+}

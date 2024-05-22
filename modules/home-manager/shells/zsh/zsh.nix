@@ -17,7 +17,7 @@ in
       ignoreSpace = true;
     };
 
-    # Check to see if fzf is installed.
+    # TODO: Check to see if fzf is installed.
     initExtra = ''
       # Keybindings
       bindkey '^p' history-search-backward
