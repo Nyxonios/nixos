@@ -10,7 +10,8 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
 
-      ../../modules/nixos/window-managers/default.nix
+
+      ./../../modules/nixos/drivers/nvidia.nix
     ];
 
   # Bootloader.
@@ -93,7 +94,7 @@
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = ["FiraCode"]; })
+    (nerdfonts.override { fonts = ["FiraCode" "FirCode Nerd Font"]; })
   ];
 
   home-manager = {
