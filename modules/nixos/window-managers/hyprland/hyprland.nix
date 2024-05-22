@@ -1,14 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
-  programs.hyperland = {
+  programs.hyprland = {
     enable = true;
     nvidiaPatches = true;
     xwayland.enable = true;
   };
 
-  environment.systemPackages = [
-    pkgs.kitty
-    pkgs.dunst
+  environment.systemPackages = with pkgs; [
+    kitty
+    dunst
     libnotify
     rofi-wayland
     swww

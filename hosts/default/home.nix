@@ -7,6 +7,7 @@
     ../../modules/home-manager/editors/default.nix
     ../../modules/home-manager/terminals/default.nix
     ../../modules/home-manager/tmux/tmux.nix
+    ../../modules/nixos/window-managers/default.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -79,13 +80,6 @@
   home.sessionVariables = {
     # EDITOR = "neovim";
   };
-
-
-  # Look at how to enable this form the shells module
-  # programs.zsh = {
-  #   enable = true;
-  # };
-  # users.defaultUserShell = pkgs.zsh;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

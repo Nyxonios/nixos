@@ -5,10 +5,12 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
+  imports = [ 
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+
+      ../../modules/nixos/window-managers/default.nix
     ];
 
   # Bootloader.
@@ -115,6 +117,7 @@
     git
     gcc
     rustup
+    hwinfo
   ];
 
   programs.zsh.enable = true;
