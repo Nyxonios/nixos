@@ -20,7 +20,6 @@ let
     base0F = "f2cdcd"; # flamingo 
   };
 in
-with lib;
 {
   # Configure & Theme Waybar
   programs.waybar = {
