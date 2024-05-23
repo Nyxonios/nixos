@@ -20,14 +20,14 @@ in
       {
         plugin = tmuxPlugins.sensible;
       }
-      {
-        plugin = tmuxPlugins.resurrect;
-        extraConfig = "set -g @resurrect-capture-pane-contents 'on'";
-      }
-      {
-        plugin = tmuxPlugins.continuum;
-        extraConfig = "set -g @continuum-restore 'on'";
-      }
+      # {
+      #   plugin = tmuxPlugins.resurrect;
+      #   extraConfig = "set -g @resurrect-capture-pane-contents 'on'";
+      # }
+      # {
+      #   plugin = tmuxPlugins.continuum;
+      #   extraConfig = "set -g @continuum-restore 'on'";
+      # }
       {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''

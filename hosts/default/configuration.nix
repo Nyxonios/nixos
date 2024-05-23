@@ -94,7 +94,7 @@
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = ["FiraCode" "FirCode Nerd Font"]; })
+    (nerdfonts.override { fonts = ["FiraCode"]; })
   ];
 
   home-manager = {
@@ -110,6 +110,29 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  ######################### Start: Hyprland config ######################### 
+
+  # TODO: Figure out how to extract this out into its own config.
+  # TODO: I am getting a message saying that I dont have access
+  # TODO: to the envirment.sessionVariables from the module I tried
+  # TODO: to create.
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
+  hardware = {
+    opengl.enable = true;
+    nvidia.modesetting.enable = true;
+  };
+
+  ######################### END: hyprland config ######################### 
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -119,6 +142,14 @@
     gcc
     rustup
     hwinfo
+    ripgrep
+    brave
+
+    # Hyprland stuff
+    dunst
+    libnotify
+    rofi-wayland
+    swww
   ];
 
   programs.zsh.enable = true;

@@ -6,11 +6,14 @@ live_config_reload = true
 [env]
 TERM = "xterm-256color"
 
+[shell]
+program = "zsh"
+args = ["-l", "-c", "tmux"]
 
 [font]
 normal = {family = "FiraCode Nerd Font"}
-size = 11.0
+size = 10.0
 
-# [window]
-# decorations = "None"
+[window]
+decorations = "None"
 
