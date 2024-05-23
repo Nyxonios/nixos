@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, pkgs, ... }:
 let
   betterTransition = true;
   palette = {
@@ -172,8 +172,7 @@ with lib;
         };
       }
     ];
-    style = concatStrings [
-      ''
+    style = ''
         * {
           font-size: 16px;
           border-radius: 0px;
@@ -290,8 +289,7 @@ with lib;
           padding: 0px 15px 0px 30px;
           border-radius: 0px 0px 0px 40px;
         }
-      ''
-    ];
+      '';
   };
 } 
 

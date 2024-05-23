@@ -7,7 +7,7 @@
     ../../modules/home-manager/editors/default.nix
     ../../modules/home-manager/terminals/default.nix
     ../../modules/home-manager/tmux/tmux.nix
-    ../../modules/nixos/window-managers/default.nix
+    ../../modules/home-manager/waybar.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
