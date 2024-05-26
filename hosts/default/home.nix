@@ -8,7 +8,6 @@
     ../../modules/home-manager/terminals/default.nix
     ../../modules/home-manager/tmux/tmux.nix
     ../../modules/home-manager/waybar.nix
-    ../../modules/home-manager/git.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

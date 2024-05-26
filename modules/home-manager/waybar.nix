@@ -22,6 +22,9 @@ let
 in
 with lib;
 {
+  # Program that waybar uses.
+  programs.pulseaudio.enable = true;
+  
   # Configure & Theme Waybar
   programs.waybar = {
     enable = true;
@@ -33,21 +36,19 @@ with lib;
         modules-center = [ "hyprland/workspaces" ];
         modules-left = [
           "custom/startmenu"
-          "hyprland/window"
           "pulseaudio"
           "cpu"
           "memory"
           "idle_inhibitor"
-          "wifi"
           "bluetooth"
         ];
         modules-right = [
+          "network"
           "custom/hyprbindings"
           "custom/themeselector"
           "custom/notification"
           "custom/exit"
           "tray"
-          "network"
           "clock"
         ];
 
@@ -65,13 +66,6 @@ with lib;
           format = " {:L%H:%M}";
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
-        };
-        "hyprland/window" = {
-          max-length = 22;
-          separate-outputs = false;
-          rewrite = {
-            "" = " 🙈 No Windows? ";
-          };
         };
         "memory" = {
           interval = 5;
@@ -148,7 +142,7 @@ with lib;
           tooltip = false;
           format = "";
           # exec = "rofi -show drun";
-          on-click = "sleep 0.1 && wofi";
+          on-click = "sleep 0.1 && rofi";
         };
         "custom/hyprbindings" = {
           tooltip = false;
