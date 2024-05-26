@@ -19,7 +19,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   hardware.bluetooth.enable = true;
 
   # Configure network proxy if necessary
@@ -56,7 +55,7 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
+    layout = "us,se";
     variant = "";
   };
 
@@ -106,7 +105,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
+  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -137,8 +136,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
     git
+    wget
     gcc
     rustup
     hwinfo

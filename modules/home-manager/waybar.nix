@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  betterTransition = true;
+  betterTransition = "true";
   palette = {
     base00 = "1e1e2e"; # base
     base01 = "181825"; # mantle
@@ -20,6 +20,7 @@ let
     base0F = "f2cdcd"; # flamingo 
   };
 in
+with lib;
 {
   # Configure & Theme Waybar
   programs.waybar = {
@@ -37,6 +38,8 @@ in
           "cpu"
           "memory"
           "idle_inhibitor"
+          "wifi"
+          "bluetooth"
         ];
         modules-right = [
           "custom/hyprbindings"
@@ -44,6 +47,7 @@ in
           "custom/notification"
           "custom/exit"
           "tray"
+          "network"
           "clock"
         ];
 
@@ -98,6 +102,15 @@ in
         };
         "tray" = {
           spacing = 12;
+        };
+        "bluetooth" = {
+          # "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+          format = " {status}";
+          format-disabled = ""; # an empty format will hide the module
+          format-connected = " {num_connections} connected";
+          tooltip-format = "{controller_alias}\t{controller_address}";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
         };
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
@@ -251,7 +264,7 @@ in
         tooltip label {
           color: #${palette.base07};
         }
-        #window, #pulseaudio, #cpu, #memory, #idle_inhibitor {
+        #window, #pulseaudio, #cpu, #memory, #idle_inhibitor, #bluetooth {
           font-weight: bold;
           margin: 4px 0px;
           margin-left: 7px;
