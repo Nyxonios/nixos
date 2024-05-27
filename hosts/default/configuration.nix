@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, ...}:
 
 {
   imports = [ 
@@ -21,6 +21,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   hardware.bluetooth.enable = true;
 
+  
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -110,16 +111,6 @@
   nixpkgs.config.allowUnfree = true;
 
   ######################### Start: Hyprland config ######################### 
-
-  # TODO: Figure out how to extract this out into its own config.
-  # TODO: I am getting a message saying that I dont have access
-  # TODO: to the envirment.sessionVariables from the module I tried
-  # TODO: to create.
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
@@ -129,7 +120,6 @@
     opengl.enable = true;
     nvidia.modesetting.enable = true;
   };
-
   ######################### END: hyprland config ######################### 
 
   # List packages installed in system profile. To search, run:
@@ -143,12 +133,13 @@
     hwinfo
     ripgrep
     brave
+    pavucontrol
 
     # Hyprland stuff
-    dunst
-    libnotify
-    rofi-wayland
-    swww
+    # dunst
+    # libnotify
+    # rofi-wayland
+    # swww
   ];
 
   programs.zsh.enable = true;

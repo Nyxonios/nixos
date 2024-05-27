@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, lib, inputs, ...}:
 let
   betterTransition = "true";
   palette = {
