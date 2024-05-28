@@ -12,7 +12,9 @@
 
 
       ./../../modules/nixos/drivers/nvidia.nix
+      ../../modules/nixos/window-managers
     ];
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -111,15 +113,6 @@
   nixpkgs.config.allowUnfree = true;
 
   ######################### Start: Hyprland config ######################### 
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
-  };
-
-  hardware = {
-    opengl.enable = true;
-    nvidia.modesetting.enable = true;
-  };
   ######################### END: hyprland config ######################### 
 
   # List packages installed in system profile. To search, run:
