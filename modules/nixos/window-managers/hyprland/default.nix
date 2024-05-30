@@ -1,7 +1,9 @@
 { ... }:
 {
   imports = [
-    ./hyprland.nix
-    ./waybar.nix
+    ./hypr/hypr.nix
+    ./waybar/waybar.nix
+    ./wlogout/wlogout.nix
+    ./rofi/rofi.nix
   ];
 }

@@ -13,7 +13,12 @@
 
       ./../../modules/nixos/drivers/nvidia.nix
       ../../modules/nixos/window-managers
-    ];
+  ];
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+  };
 
 
   # Bootloader.
@@ -69,6 +74,7 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.blueman.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
