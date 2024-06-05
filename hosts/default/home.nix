@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   
@@ -44,6 +44,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.fzf
+    pkgs.go
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

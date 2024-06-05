@@ -130,7 +130,8 @@ in
         "custom/exit" = {
           tooltip = false;
           format = "";
-          on-click = "sleep 0.1 && wlogout";
+          # TODO: Get the number of buttons from wlogut and use that as input to the command below. 
+          on-click = "sleep 0.1 && wlogout -b 5";
         };
         # "custom/hyprbindings" = {
         #   tooltip = false;
