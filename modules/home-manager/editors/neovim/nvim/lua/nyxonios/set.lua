@@ -31,4 +31,4 @@ vim.opt.splitbelow = true
 vim.opt.hlsearch = true
 vim.opt.scrolloff = 10
 
-vim.filetype.add { extension = { templ = 'templ' } }
+vim.filetype.add { extension = { templ = 'templ', tmpl = 'tmpl' } }

@@ -1,6 +1,9 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 
 layout_f=/tmp/kb_layout
+if [ ! -f $layout_f ]; then
+  toch $layout_f
+fi
 
 case $(cat "$layout_f") in 
   us)

@@ -1,5 +1,5 @@
 
-{ inputs, pkgs, config, ... }:
+{ ... }:
 {
   programs.neovim = {
     enable = true;
@@ -11,6 +11,9 @@
   # such that we can set the aliases on 
   # the current shell.
   # programs.zsh.shellAlisases = {
+  #   "nvimc" = "cd ~/nixos/modules/home-manager/editors/neovim/nvim/";
+  # };
+  # shellAliases = {
   #   "nvimc" = "cd ~/nixos/modules/home-manager/editors/neovim/nvim/";
   # };
 

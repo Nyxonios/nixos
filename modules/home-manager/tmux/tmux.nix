@@ -1,16 +1,4 @@
-{config, lib, pkgs, ...}:
-let
-  navigator = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "vim-tmux-navigator";
-    version = "v1.0";
-    src = pkgs.fetchFromGitHub {
-      owner = "christoomey";
-      repo = "vim-tmux-navigator";
-      rev = "v1.0";
-      sha256 = "sha256-dcesrv2Bcl9uXO8bx0CCzIxs5waaAEP6wflCEVIe4YQ=";
-    };
-  };
-in
+{pkgs, ...}:
 {
   programs.tmux = {
     enable = true;
@@ -20,14 +8,6 @@ in
       {
         plugin = tmuxPlugins.sensible;
       }
-      # {
-      #   plugin = tmuxPlugins.resurrect;
-      #   extraConfig = "set -g @resurrect-capture-pane-contents 'on'";
-      # }
-      # {
-      #   plugin = tmuxPlugins.continuum;
-      #   extraConfig = "set -g @continuum-restore 'on'";
-      # }
       {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
@@ -50,9 +30,6 @@ in
           set -g @catppuccin_date_time_text "%H:%M"
           '';
       }
-      # {
-      #   plugin = navigator;
-      # }
     ];
     extraConfig = ''
       set -g default-terminal "tmux-256color"
@@ -101,7 +78,7 @@ in
       set -sg escape-time 10
 
       unbind C-g
-      # bind -n C-g display-popup -E "lazygit"
+      bind -n C-g display-popup -E "lazygit"
 
 
       is_vim="ps -o state= -o comm= -t '#{pane_tty}' \

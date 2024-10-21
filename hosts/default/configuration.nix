@@ -133,6 +133,7 @@
     ripgrep
     brave
     pavucontrol
+    zigpkgs.master
 
     # Hyprland stuff
     # dunst

@@ -47,9 +47,6 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      -- Open LSP stuff (Go to definition etc) in floating window.
-      'rmagatti/goto-preview',
-
       -- Neovim completion
       { 'folke/neodev.nvim', opts = {} },
 
@@ -58,7 +55,6 @@ return {
       { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
-      require('goto-preview').setup()
       -- Brief Aside: **What is LSP?**
       --
       -- LSP is an acronym you've probably heard, but might not understand what it is.
@@ -142,14 +138,6 @@ return {
           --  For example, in C this would take you to the header
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-          -- For opening LSP stuff in floating windows
-          map('gpd', require('goto-preview').goto_preview_definition, '[G]oto [P]review [D]efinition')
-          map('gpt', require('goto-preview').goto_preview_type_definition, '[G]oto [P]review [T]type definition')
-          map('gpi', require('goto-preview').goto_preview_implementation, '[G]oto [P]review [I]mplementation')
-          map('gpD', require('goto-preview').goto_preview_declaration, '[G]oto [P]review [D]eclaration')
-          map('gpr', require('goto-preview').goto_preview_references, '[G]oto [P]review [R]eferences')
-          map('gP', require('goto-preview').close_all_win, 'Close all preview windows')
-
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
@@ -191,15 +179,15 @@ return {
         -- tsserver = {}, -- Handled with external plugin
         rust_analyzer = {},
         templ = {},
-        -- html = {
-        --   filetypes = { 'html', 'templ' },
-        -- },
-        --htmx = {
-         -- filetypes = { 'html', 'templ' },
-        -- },
-        -- tailwindcss = {
-          -- filetypes = { 'html', 'templ' },
-        -- },
+        html = {
+          filetypes = { 'html', 'templ', 'tmpl' },
+        },
+        htmx = {
+          filetypes = { 'html', 'templ', 'tmpl' },
+        },
+        tailwindcss = {
+          filetypes = { 'html', 'templ', 'tmpl' },
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
